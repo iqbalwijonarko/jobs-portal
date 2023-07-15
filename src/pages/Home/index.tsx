@@ -44,11 +44,12 @@ export default function Home() {
 
     const onClickJobsDetail = (job: jobDataType) => {
         history.push({
-          pathname: '/jobs-detail',
-          state: { job },
+            pathname: '/jobs-detail',
+            state: { job },
         });
-      };
+    };
 
+    const isSearchNotEmpty = jobDescription?.length > 0 || jobLocation?.length > 0 || isFullTimeOnly
 
     return (
         <>
@@ -85,9 +86,9 @@ export default function Home() {
                     </Grid>
                 </Grid>
                 <Grid className='home__valuesContainer' margin={'3rem'} border={'5px solid #d1bdbd'} padding={'1rem'}>
-                    <Typography color={'black'} fontSize={'20pt'} fontWeight={600}>Job List</Typography>
+                    <Typography color={'black'} fontSize={'20pt'} fontWeight={600}>{isSearchNotEmpty ? `Showing ${jobListData.length} jobs` : 'Job List'}</Typography>
                     <Grid>
-                        <ul style={{paddingLeft: 0, wordWrap: 'break-word'}}>
+                        <ul style={{ paddingLeft: 0, wordWrap: 'break-word' }}>
                             {jobListData && jobListData.length > 0 ? (
                                 jobListData.map((job: jobDataType) => {
                                     const jobDateCreated = new Date(job?.created_at);
@@ -98,7 +99,7 @@ export default function Home() {
                                             <Box sx={{ borderTop: 1 }} borderColor={'black'} padding={'.5rem'}>
                                                 <Grid display={'flex'} flexDirection={isMobile ? 'column' : 'row'} justifyContent={'space-between'}>
                                                     <Grid>
-                                                        <Button style={{padding: 0}} onClick={() => onClickJobsDetail(job)}>
+                                                        <Button style={{ padding: 0 }} onClick={() => onClickJobsDetail(job)}>
                                                             <Typography fontSize={isMobile ? '10pt' : undefined} color={'#854687'} fontWeight={800} textAlign={'start'}>{job?.title}</Typography>
                                                         </Button>
                                                         <Grid display={'flex'} flexDirection={'row'} gap={'.5rem'}>

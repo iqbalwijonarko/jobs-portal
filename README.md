@@ -3,7 +3,7 @@
 ## - Jobs Portal with search filter by description, location, working arrangements type
 ## - Login via Google Account
 
-![](image.png)
+![](image-3.png)
 ![](image-2.png)
 ![](image-1.png)
 
