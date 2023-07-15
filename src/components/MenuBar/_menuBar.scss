@@ -1,0 +1,32 @@
+.menu-bar {
+
+    &__outside {
+        background-color: #6913D8;
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    &__dialog {
+        padding: .5rem 1rem;
+
+        &__buttonClose {
+            padding: 0 !important;
+            min-width: 0 !important;
+        }
+        
+        &__buttonLogin {
+            margin: 0 2rem 2rem 2rem;
+
+            &__textHeader {
+                font-weight: 700 !important;
+            }
+            
+            &__subText{
+                font-weight: 300 !important;
+                font-size: 9pt !important;
+                margin-bottom: 1rem !important;
+            }
+        }
+    }
+}
